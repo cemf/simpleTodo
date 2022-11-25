@@ -49,8 +49,9 @@ class TarefasController {
     return update
   }
 
-  async deletePersonByName(pessoa){
-    await Tarefas.deleteOne(pessoa)
+  async deleteTaskById(id){
+      await Tarefas.deleteOne(id)
+      return 'ok'
   }
 
   async deleteAll(){

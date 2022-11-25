@@ -127,6 +127,23 @@ app.post('/updateTarefa/:id', (req, res) => {
     .catch((error) => console.error(error))
 })
 
+app.delete('/delete/:id',(req, res) => {
+  const id = req.params.id
+  
+  const del = async () => {
+    return await tarefaController.deleteTaskById({ _id: id })
+  }
+  del()
+    .then((resp) => {
+      if (resp) {
+        res.json('tudo ok')
+      } else {
+        res.json('Erro ao deletar tudo')
+      }
+    })
+    .catch((error) => console.error(error))
+})
+
 // cria usuario ---
 // ve usuarios e tarefas ---
 // editar, acrescentar deletar tarefas no usuario

@@ -1,3 +1,4 @@
+const { json } = require('express')
 const Tarefas = require('../Models/Tarefa')
 
 class TarefasController {
@@ -9,6 +10,11 @@ class TarefasController {
   async getOne(id){
     const person = await Tarefas.find(id)
     return person
+  }
+
+  async seachTask(task){
+    const tarefa = await Tarefas.find(task)
+    return tarefa
   }
 
   async criaUsuario(pessoa) {

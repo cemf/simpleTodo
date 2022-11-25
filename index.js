@@ -8,7 +8,7 @@ const Tarefa = require('./Models/Tarefa')
 const { json } = require('body-parser')
 const { criaUsuario } = require('./Controllers/TarefasController')
 
-const url = 'mongodb://127.0.0.1:27017/aprendendo_mongo'
+const url = 'mongodb://127.0.0.1:27017/todolist'
 
 mongoose.connect(url, { useNewUrlParser: true })
 

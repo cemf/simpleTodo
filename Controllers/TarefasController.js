@@ -32,7 +32,7 @@ class TarefasController {
 
   async criaTarefa(tarefa) {
     try{
-        tarefa.concluida = false
+        tarefa.status = "pendente"
         await Tarefas.create(tarefa)
        return 'sucess'
       }catch(e){

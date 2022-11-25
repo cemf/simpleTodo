@@ -111,9 +111,9 @@ app.delete('/DelAll', (req, res) => {
 
 app.post('/updateTarefa/:id', (req, res) => {
   const id = req.params.id
-  console.log(res.body)
+  console.log(req.body)
   const update = async () => {
-    return await tarefaController.tarefaFindByIdAndUpdate(id, res.body)
+    return await tarefaController.tarefaFindByIdAndUpdate(id, req.body)
   }
   update()
     .then((resp) => {
